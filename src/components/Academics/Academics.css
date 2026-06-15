@@ -1,0 +1,201 @@
+/* =========================
+   ACADEMICS PAGE
+========================= */
+
+.academics{
+    padding:100px 6%;
+    background:#f8f9fc;
+}
+
+/* HEADER */
+
+.academics-header{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.academics-header h2{
+    font-size:2.7rem;
+    color:var(--navy);
+    font-weight:800;
+}
+
+.academics-header p{
+    color:#555;
+    margin-top:10px;
+}
+
+/* =========================
+   KPI CARDS
+========================= */
+
+.academics-stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+    gap:20px;
+    margin-bottom:40px;
+}
+
+.stat-card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.05);
+
+    transition:0.3s ease;
+}
+
+.stat-card:hover{
+    transform:translateY(-6px);
+}
+
+.stat-card h3{
+    color:var(--navy);
+    margin-bottom:8px;
+}
+
+.stat-card p{
+    color:#555;
+}
+
+/* highlight */
+.stat-card.highlight{
+    background:linear-gradient(135deg, var(--navy), #0b2a4a);
+    color:white;
+}
+
+.stat-card.highlight h3,
+.stat-card.highlight p{
+    color:white;
+}
+
+/* =========================
+   CHART
+========================= */
+
+.chart-container{
+    margin-top:20px;
+    text-align:center;
+}
+
+.chart-container h3{
+    font-size:2rem;
+    color:var(--navy);
+    margin-bottom:20px;
+}
+
+.chart-box{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+    transition:0.4s ease;
+}
+
+.chart-box:hover{
+    transform:scale(1.01);
+}
+
+/* =========================
+   INSIGHT
+========================= */
+
+.insight{
+    margin-top:50px;
+    background:linear-gradient(135deg, var(--cream), #fff);
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+.insight h3{
+    color:var(--navy);
+    margin-bottom:10px;
+}
+
+.insight p{
+    color:#444;
+    line-height:1.7;
+}
+
+/* =========================
+   ANALYSIS SECTION
+========================= */
+
+.analysis-section{
+    margin-top:60px;
+    text-align:center;
+}
+
+.analysis-section h3{
+    font-size:2rem;
+    color:var(--navy);
+    margin-bottom:25px;
+}
+
+/* GRID */
+.analysis-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(180px,1fr));
+    gap:20px;
+}
+
+/* CARD */
+.analysis-card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.05);
+
+    transition:0.3s ease;
+}
+
+.analysis-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* TEXT */
+.analysis-card h4{
+    color:var(--navy);
+    margin-bottom:10px;
+}
+
+.score{
+    color:#444;
+    margin-bottom:8px;
+}
+
+.change{
+    font-weight:700;
+    margin-bottom:5px;
+}
+
+.change.up{
+    color:#1a8f4b;
+}
+
+.change.down{
+    color:#d64545;
+}
+
+.deviation{
+    font-size:0.9rem;
+    color:#666;
+}
+
+.recharts-tooltip-wrapper{
+    font-size:14px;
+}
+
+.recharts-default-tooltip{
+    background:white !important;
+    border-radius:10px !important;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15) !important;
+}

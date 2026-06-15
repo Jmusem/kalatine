@@ -1,0 +1,217 @@
+/* =========================
+   NAVBAR BASE GLASS STYLE
+========================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+
+    width:100%;
+    padding:1px 4%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:transparent;
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+/* =========================
+   SCROLLED STATE
+========================= */
+
+.navbar.scrolled{
+    background:rgba(10, 35, 66, 0.88);
+    backdrop-filter:blur(20px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   LOGO SECTION
+========================= */
+
+.logo-container{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.school-logo{
+    width:65px;
+    height:65px;
+    object-fit:contain;
+    border-radius:8px;
+}
+
+.logo-text{
+    display:flex;
+    flex-direction:column;
+}
+
+.logo-text h2{
+    color:white;
+    font-size:1.3rem;
+    font-weight:700;
+    line-height:1.1;
+}
+
+.logo-text span{
+    color:var(--cream);
+    font-size:0.9rem;
+    font-weight:600;
+    letter-spacing:1px;
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:32px;
+}
+
+.nav-links li{
+    list-style:none;
+    position:relative;
+}
+
+.nav-links a{
+    color:white;
+    font-weight:600;
+    font-size:1rem;
+    text-decoration:none;
+    transition:0.3s ease;
+}
+
+/* hover effect */
+.nav-links a:hover{
+    color:var(--cream);
+}
+
+/* underline animation */
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+
+    width:0;
+    height:2px;
+
+    background:var(--cream);
+    transition:0.4s ease;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+/* =========================
+   CTA BUTTON
+========================= */
+
+.admission-btn{
+    background:rgba(245, 230, 168, 0.95);
+    color:var(--navy);
+
+    border:none;
+    padding:13px 26px;
+    border-radius:50px;
+
+    font-weight:700;
+    cursor:pointer;
+
+    transition:0.4s ease;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+.admission-btn:hover{
+    transform:translateY(-3px);
+    background:white;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    color:white;
+    cursor:pointer;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media(max-width:992px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .admission-btn{
+        display:none;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:100%;
+        left:-100%;
+
+        width:100%;
+        flex-direction:column;
+
+        background:rgba(10, 35, 66, 0.95);
+        backdrop-filter:blur(20px);
+
+        padding:40px 0;
+        gap:25px;
+
+        transition:0.4s ease;
+    }
+
+    .nav-links.active{
+        left:0;
+    }
+
+    .logo-text h2{
+        font-size:1.1rem;
+    }
+
+    .school-logo{
+        width:55px;
+        height:55px;
+    }
+}
+
+@media(max-width:576px){
+
+    .navbar{
+        padding:14px 5%;
+    }
+
+    .logo-text h2{
+        font-size:1rem;
+    }
+
+    .logo-text span{
+        font-size:0.75rem;
+    }
+
+    .school-logo{
+        width:45px;
+        height:45px;
+    }
+}

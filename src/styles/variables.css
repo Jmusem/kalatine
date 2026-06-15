@@ -1,0 +1,9 @@
+:root {
+    --navy: #0A2342;
+    --cream: #F5E6A8;
+    --yellow: #F4C542;
+    --white: #FFFFFF;
+
+    --text-light: rgba(255,255,255,0.9);
+    --glass: rgba(255,255,255,0.08);
+}
