@@ -41,7 +41,7 @@ function About() {
                     </h3>
 
                     <p>
-                        Founded in 2011 by the local community, Kalatine Girls
+                        Founded in 2011 by the local community intiated by Mr Benson Mukiti Mutio, Kalatine Girls
                         Secondary School was established to provide quality
                         education opportunities for girls in the then Kyuso
                         Sub-County, currently Mumoni Sub-County.
@@ -141,7 +141,7 @@ function About() {
                         <div className="leader-info">
                             <span>Board of Management Chairperson</span>
 
-                            <h4>BOM Chairperson</h4>
+                            <h4>Jeffrey Kyalo musya</h4>
 
                             <p>
                                 Providing governance, strategic direction,
