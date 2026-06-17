@@ -20,6 +20,9 @@ import cu2 from "../../assets/images/cu2.jpeg";
 import scout1 from "../../assets/images/scout.jpeg";
 import scout2 from "../../assets/images/scout2.jpeg";
 
+/* =========================
+   IMAGE SLIDER
+========================= */
 function ImageSlider({ images }) {
   const [current, setCurrent] = useState(0);
 
@@ -50,10 +53,7 @@ function ImageSlider({ images }) {
 
       <div className="slider-dots">
         {images.map((_, i) => (
-          <span
-            key={i}
-            className={i === current ? "active-dot" : ""}
-          />
+          <span key={i} className={i === current ? "active-dot" : ""} />
         ))}
       </div>
 
@@ -61,6 +61,9 @@ function ImageSlider({ images }) {
   );
 }
 
+/* =========================
+   MAIN
+========================= */
 function Clubs() {
 
   const clubs = [
@@ -120,69 +123,41 @@ function Clubs() {
     }
   ];
 
-  const filters = [
-    "All",
-    "Sports",
-    "Creative Arts",
-    "Leadership"
-  ];
+  const filters = ["All", "Sports", "Creative Arts", "Leadership"];
 
   const [activeFilter, setActiveFilter] = useState("All");
 
   const filteredClubs =
     activeFilter === "All"
       ? clubs
-      : clubs.filter(
-          (club) => club.category === activeFilter
-        );
-
-  const [interest, setInterest] = useState("");
-  const [recommendation, setRecommendation] = useState("");
-
-  const findClub = () => {
-    if (interest === "sports")
-      setRecommendation("🏐 Volleyball Club");
-
-    else if (interest === "creative")
-      setRecommendation("🎵 Music & Fashion Clubs");
-
-    else if (interest === "leadership")
-      setRecommendation("⛺ Scouts & Christian Union");
-
-    else
-      setRecommendation("Explore all clubs!");
-  };
+      : clubs.filter((c) => c.category === activeFilter);
 
   return (
     <section className="clubs-section" id="clubs">
 
+      {/* HEADER */}
       <div className="clubs-header">
 
-        <span className="section-badge">
-          Student Life
-        </span>
+        <span className="section-badge">Student Life</span>
 
         <h2>Clubs & Societies</h2>
 
         <p>
-          Discover opportunities that develop leadership,
-          creativity, confidence, teamwork and lifelong skills.
+          A vibrant co-curricular ecosystem where students grow
+          in talent, leadership, creativity and discipline.
         </p>
 
       </div>
 
       {/* FILTERS */}
-
       <div className="filter-container">
 
         {filters.map((filter) => (
           <button
             key={filter}
-            className={
-              activeFilter === filter
-                ? "filter-btn active"
-                : "filter-btn"
-            }
+            className={`filter-btn ${
+              activeFilter === filter ? "active" : ""
+            }`}
             onClick={() => setActiveFilter(filter)}
           >
             {filter}
@@ -191,22 +166,21 @@ function Clubs() {
 
       </div>
 
-      {/* CLUB CARDS */}
-
+      {/* CARDS */}
       <div className="activities-grid">
 
         {filteredClubs.map((club, index) => (
-
           <motion.div
-            className="activity-card"
             key={index}
+            className="activity-card"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            whileHover={{ y: -12 }}
+            whileHover={{ y: -10 }}
             transition={{ duration: 0.5 }}
           >
 
             <div className="activity-image">
+
               <ImageSlider images={club.images} />
 
               <div className="club-category">
@@ -237,67 +211,15 @@ function Clubs() {
 
               <div className="club-info">
 
-                <p>
-                  📅 {club.meeting}
-                </p>
-
-                <p>
-                  🏆 {club.achievement}
-                </p>
+                <p>📅 {club.meeting}</p>
+                <p>🏆 {club.achievement}</p>
 
               </div>
 
             </div>
 
           </motion.div>
-
         ))}
-
-      </div>
-
-      {/* FIND YOUR FIT */}
-
-      <div className="quiz-section">
-
-        <h3>Find Your Fit</h3>
-
-        <p>
-          Tell us what interests you most and we'll
-          recommend a club.
-        </p>
-
-        <select
-          value={interest}
-          onChange={(e) =>
-            setInterest(e.target.value)
-          }
-        >
-          <option value="">
-            Select Interest
-          </option>
-
-          <option value="sports">
-            Sports & Competition
-          </option>
-
-          <option value="creative">
-            Creativity & Arts
-          </option>
-
-          <option value="leadership">
-            Leadership & Service
-          </option>
-        </select>
-
-        <button onClick={findClub}>
-          Find My Club
-        </button>
-
-        {recommendation && (
-          <div className="recommendation">
-            {recommendation}
-          </div>
-        )}
 
       </div>
 
