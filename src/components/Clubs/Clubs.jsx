@@ -1,5 +1,4 @@
 import "./Clubs.css";
-import * as Tabs from "@radix-ui/react-tabs";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
@@ -15,25 +14,19 @@ import fashion from "../../assets/images/fashion.jpeg";
 import fashion2 from "../../assets/images/fashion2.jpeg";
 import fashion3 from "../../assets/images/fashion3.jpeg";
 
-
 import cu1 from "../../assets/images/cu.jpeg";
 import cu2 from "../../assets/images/cu2.jpeg";
 
 import scout1 from "../../assets/images/scout.jpeg";
 import scout2 from "../../assets/images/scout2.jpeg";
 
-/* =========================
-   IMAGE SLIDER (FIXED)
-========================= */
 function ImageSlider({ images }) {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    if (!images || images.length === 0) return;
-
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
-    }, 4000);
+    }, 3500);
 
     return () => clearInterval(interval);
   }, [images]);
@@ -49,7 +42,7 @@ function ImageSlider({ images }) {
           initial={{ opacity: 0, scale: 1.1 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.9 }}
+          transition={{ duration: 0.8 }}
         />
       </AnimatePresence>
 
@@ -57,7 +50,10 @@ function ImageSlider({ images }) {
 
       <div className="slider-dots">
         {images.map((_, i) => (
-          <span key={i} className={i === current ? "active-dot" : ""} />
+          <span
+            key={i}
+            className={i === current ? "active-dot" : ""}
+          />
         ))}
       </div>
 
@@ -65,119 +61,245 @@ function ImageSlider({ images }) {
   );
 }
 
-/* =========================
-   MAIN COMPONENT
-========================= */
 function Clubs() {
-
-  const games = [
-    {
-      title: "Volleyball",
-      images: [volleyball1, volleyball2, volleyball3],
-      description:
-        "Building teamwork, discipline, fitness and excellence through competitive sports."
-    }
-  ];
 
   const clubs = [
     {
+      title: "Volleyball",
+      category: "Sports",
+      members: 45,
+      meeting: "Tue & Thu • 4:00 PM",
+      achievement: "County Competitions",
+      images: [volleyball1, volleyball2, volleyball3],
+      description:
+        "Building teamwork, fitness, discipline and sports excellence."
+    },
+
+    {
       title: "Music Club",
+      category: "Creative Arts",
+      members: 30,
+      meeting: "Wednesday • 4:00 PM",
+      achievement: "Music Festivals",
       images: [music1, music2],
       description:
-        "Developing creativity, performance confidence and musical talent."
-    }
-    ,
+        "Developing creativity, confidence and performance skills."
+    },
+
     {
       title: "Fashion Club",
-      images: [fashion, fashion2, fashion3],    
+      category: "Creative Arts",
+      members: 22,
+      meeting: "Friday • 4:00 PM",
+      achievement: "Fashion Showcase",
+      images: [fashion, fashion2, fashion3],
       description:
-        "Fostering creativity, design skills and self-expression through fashion."  
+        "Fostering creativity and self-expression through design."
+    },
 
-    }
-  ];
-
-  const societies = [
     {
       title: "Christian Union",
+      category: "Leadership",
+      members: 60,
+      meeting: "Saturday • 2:00 PM",
+      achievement: "Spiritual Growth",
       images: [cu1, cu2],
       description:
-        "Spiritual growth, mentorship and leadership development."
+        "Building faith, leadership and mentorship."
     },
+
     {
       title: "Scouts",
+      category: "Leadership",
+      members: 35,
+      meeting: "Saturday • 10:00 AM",
+      achievement: "Community Service",
       images: [scout1, scout2],
       description:
-        "Discipline, resilience, teamwork and community service."
+        "Building resilience, teamwork and practical skills."
     }
   ];
 
-  const renderCards = (items, label) => (
-    <motion.div
-      className="activities-grid"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-    >
-      {items.map((item, index) => (
-        <motion.div
-          key={index}
-          className="activity-card"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          whileHover={{ y: -10 }}
-        >
+  const filters = [
+    "All",
+    "Sports",
+    "Creative Arts",
+    "Leadership"
+  ];
 
-          <div className="activity-image">
-            <ImageSlider images={item.images} />
-            <div className="image-tag">{label}</div>
-          </div>
+  const [activeFilter, setActiveFilter] = useState("All");
 
-          <div className="activity-content">
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
-          </div>
+  const filteredClubs =
+    activeFilter === "All"
+      ? clubs
+      : clubs.filter(
+          (club) => club.category === activeFilter
+        );
 
-        </motion.div>
-      ))}
-    </motion.div>
-  );
+  const [interest, setInterest] = useState("");
+  const [recommendation, setRecommendation] = useState("");
+
+  const findClub = () => {
+    if (interest === "sports")
+      setRecommendation("🏐 Volleyball Club");
+
+    else if (interest === "creative")
+      setRecommendation("🎵 Music & Fashion Clubs");
+
+    else if (interest === "leadership")
+      setRecommendation("⛺ Scouts & Christian Union");
+
+    else
+      setRecommendation("Explore all clubs!");
+  };
 
   return (
     <section className="clubs-section" id="clubs">
 
-      <motion.div className="clubs-header">
-        <span className="section-badge">Student Life</span>
+      <div className="clubs-header">
 
-        <h2>Clubs, Games & Societies</h2>
+        <span className="section-badge">
+          Student Life
+        </span>
+
+        <h2>Clubs & Societies</h2>
 
         <p>
-          We nurture talent, leadership and creativity through
-          sports, clubs and societies that build holistic learners.
+          Discover opportunities that develop leadership,
+          creativity, confidence, teamwork and lifelong skills.
         </p>
-      </motion.div>
 
-      <Tabs.Root defaultValue="games">
+      </div>
 
-        <Tabs.List className="tabs-list">
-          <Tabs.Trigger value="games">Games</Tabs.Trigger>
-          <Tabs.Trigger value="clubs">Clubs</Tabs.Trigger>
-          <Tabs.Trigger value="societies">Societies</Tabs.Trigger>
-        </Tabs.List>
+      {/* FILTERS */}
 
-        <Tabs.Content value="games">
-          {renderCards(games, "Games")}
-        </Tabs.Content>
+      <div className="filter-container">
 
-        <Tabs.Content value="clubs">
-          {renderCards(clubs, "Clubs")}
-        </Tabs.Content>
+        {filters.map((filter) => (
+          <button
+            key={filter}
+            className={
+              activeFilter === filter
+                ? "filter-btn active"
+                : "filter-btn"
+            }
+            onClick={() => setActiveFilter(filter)}
+          >
+            {filter}
+          </button>
+        ))}
 
-        <Tabs.Content value="societies">
-          {renderCards(societies, "Societies")}
-        </Tabs.Content>
+      </div>
 
-      </Tabs.Root>
+      {/* CLUB CARDS */}
+
+      <div className="activities-grid">
+
+        {filteredClubs.map((club, index) => (
+
+          <motion.div
+            className="activity-card"
+            key={index}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ y: -12 }}
+            transition={{ duration: 0.5 }}
+          >
+
+            <div className="activity-image">
+              <ImageSlider images={club.images} />
+
+              <div className="club-category">
+                {club.category}
+              </div>
+
+            </div>
+
+            <div className="activity-content">
+
+              <h3>{club.title}</h3>
+
+              <p>{club.description}</p>
+
+              <div className="club-stats">
+
+                <div>
+                  <strong>{club.members}</strong>
+                  <span>Members</span>
+                </div>
+
+                <div>
+                  <strong>Weekly</strong>
+                  <span>Meetings</span>
+                </div>
+
+              </div>
+
+              <div className="club-info">
+
+                <p>
+                  📅 {club.meeting}
+                </p>
+
+                <p>
+                  🏆 {club.achievement}
+                </p>
+
+              </div>
+
+            </div>
+
+          </motion.div>
+
+        ))}
+
+      </div>
+
+      {/* FIND YOUR FIT */}
+
+      <div className="quiz-section">
+
+        <h3>Find Your Fit</h3>
+
+        <p>
+          Tell us what interests you most and we'll
+          recommend a club.
+        </p>
+
+        <select
+          value={interest}
+          onChange={(e) =>
+            setInterest(e.target.value)
+          }
+        >
+          <option value="">
+            Select Interest
+          </option>
+
+          <option value="sports">
+            Sports & Competition
+          </option>
+
+          <option value="creative">
+            Creativity & Arts
+          </option>
+
+          <option value="leadership">
+            Leadership & Service
+          </option>
+        </select>
+
+        <button onClick={findClub}>
+          Find My Club
+        </button>
+
+        {recommendation && (
+          <div className="recommendation">
+            {recommendation}
+          </div>
+        )}
+
+      </div>
 
     </section>
   );
