@@ -11,6 +11,10 @@ import volleyball3 from "../../assets/images/volleyball3.jpeg";
 import music1 from "../../assets/images/music.jpeg";
 import music2 from "../../assets/images/music2.jpeg";
 
+import fashion from "../../assets/images/fashion.jpeg";
+import fashion2 from "../../assets/images/fashion2.jpeg";
+import fashion3 from "../../assets/images/fashion3.jpeg";
+
 
 import cu1 from "../../assets/images/cu.jpeg";
 import cu2 from "../../assets/images/cu2.jpeg";
@@ -81,6 +85,14 @@ function Clubs() {
       images: [music1, music2],
       description:
         "Developing creativity, performance confidence and musical talent."
+    }
+    ,
+    {
+      title: "Fashion Club",
+      images: [fashion, fashion2, fashion3],    
+      description:
+        "Fostering creativity, design skills and self-expression through fashion."  
+
     }
   ];
 

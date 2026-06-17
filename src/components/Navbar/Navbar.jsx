@@ -45,11 +45,12 @@ function Navbar() {
 
             <ul className={menuOpen ? "nav-links active" : "nav-links"}>
 
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/academics">Academics</a></li>
-                <li><a href="/departments">Departments</a></li>
-                <li><a href="/gallery">Gallery</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#academics">Academics</a></li>
+                <li><a href="#clubs">Clubs</a></li>
+                <li><a href="#departments">Departments</a></li>
+                <li><a href="#gallery">Gallery</a></li>
 
             </ul>
 

@@ -8,7 +8,8 @@ function About() {
     return (
         <section className="about" id="about">
 
-            {/* HEADER */}
+         
+       {/* HEADER */}
             <motion.div
                 className="section-header"
                 initial={{ opacity: 0, y: 50 }}

@@ -20,7 +20,7 @@ function Hero() {
     }, []);
 
     return (
-        <section className="hero">
+        <section className="hero" id="home">
 
             {/* BACKGROUND SLIDES */}
             <AnimatePresence mode="wait">
@@ -82,12 +82,16 @@ function Hero() {
     </motion.div>
 
     {/* BUTTONS */}
-    <motion.div
-        className="hero-buttons"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-    >
+
+
+   <motion.div
+    className="hero-buttons"
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, delay: 0.5 }}
+>
+
+    <a href="#about">
         <motion.button
             className="btn-primary"
             whileHover={{ scale: 1.08 }}
@@ -95,14 +99,17 @@ function Hero() {
         >
             Explore School
         </motion.button>
+    </a>
 
-        <motion.button
-            className="btn-secondary"
-            whileHover={{ scale: 1.08 }}
-            whileTap={{ scale: 0.95 }}
-        >
-            Apply Now
-        </motion.button>
+    <motion.button
+        className="btn-secondary"
+        whileHover={{ scale: 1.08 }}
+        whileTap={{ scale: 0.95 }}
+    >
+        Apply Now
+    </motion.button>
+
+
     </motion.div>
 
 
