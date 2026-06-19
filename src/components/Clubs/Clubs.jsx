@@ -9,6 +9,7 @@ import volleyball3 from "../../assets/images/volleyball3.jpeg";
 
 import music1 from "../../assets/images/music.jpeg";
 import music2 from "../../assets/images/music2.jpeg";
+import music4 from "../../assets/images/music4.jpeg";
 
 import fashion from "../../assets/images/fashion.jpeg";
 import fashion2 from "../../assets/images/fashion2.jpeg";
@@ -16,6 +17,11 @@ import fashion3 from "../../assets/images/fashion3.jpeg";
 
 import cu1 from "../../assets/images/cu.jpeg";
 import cu2 from "../../assets/images/cu2.jpeg";
+
+import ycs1 from "../../assets/images/ycs1.jpeg";
+import ycs2 from "../../assets/images/ycs2.jpeg";
+
+import guidance1 from "../../assets/images/guidance1.jpeg";
 
 import scout1 from "../../assets/images/scout.jpeg";
 import scout2 from "../../assets/images/scout2.jpeg";
@@ -70,8 +76,7 @@ function Clubs() {
     {
       title: "Volleyball",
       category: "Sports",
-      members: 45,
-      meeting: "Tue & Thu • 4:00 PM",
+
       achievement: "County Competitions",
       images: [volleyball1, volleyball2, volleyball3],
       description:
@@ -81,10 +86,9 @@ function Clubs() {
     {
       title: "Music Club",
       category: "Creative Arts",
-      members: 30,
-      meeting: "Wednesday • 4:00 PM",
-      achievement: "Music Festivals",
-      images: [music1, music2],
+
+      achievement: "Music Festivals-County Level",
+      images: [music1, music2, music4],
       description:
         "Developing creativity, confidence and performance skills."
     },
@@ -92,8 +96,7 @@ function Clubs() {
     {
       title: "Fashion Club",
       category: "Creative Arts",
-      members: 22,
-      meeting: "Friday • 4:00 PM",
+
       achievement: "Fashion Showcase",
       images: [fashion, fashion2, fashion3],
       description:
@@ -101,29 +104,44 @@ function Clubs() {
     },
 
     {
-      title: "Christian Union",
-      category: "Leadership",
-      members: 60,
-      meeting: "Saturday • 2:00 PM",
-      achievement: "Spiritual Growth",
-      images: [cu1, cu2],
-      description:
-        "Building faith, leadership and mentorship."
-    },
+  title: "Christian Union (CU)",
+  category: "Religion",
 
+  achievement: "Spiritual Growth & Fellowship",
+  images: [cu1, cu2],
+  description:
+    "Nurturing Christian values, leadership, discipleship and spiritual growth through fellowship, worship and mentorship."
+},
+{
+  title: "Young Christian Society (YCS)",
+  category: "Religion",
+
+  achievement: "Faith Formation & Outreach",
+  images: [ycs1, ycs2],
+  description:
+    "Promoting spiritual growth, moral values, service to others and faith-based leadership among students."
+},
     {
       title: "Scouts",
       category: "Leadership",
-      members: 35,
-      meeting: "Saturday • 10:00 AM",
+      
       achievement: "Community Service",
       images: [scout1, scout2],
       description:
         "Building resilience, teamwork and practical skills."
-    }
+    },
+{
+  title: "Guidance & Counselling",
+  category: "Wellness & Mentorship",
+  
+  achievement: "Student Mentorship Program",
+  images: [guidance1],
+  description:
+    "Providing mentorship, emotional support, career guidance and life-skills development to empower students for personal and academic success."
+},
   ];
 
-  const filters = ["All", "Sports", "Creative Arts", "Leadership"];
+  const filters = ["All", "Sports", "Creative Arts","Religion", "Leadership","Wellness & Mentorship"];
 
   const [activeFilter, setActiveFilter] = useState("All");
 
@@ -211,7 +229,7 @@ function Clubs() {
 
               <div className="club-info">
 
-                <p>📅 {club.meeting}</p>
+                
                 <p>🏆 {club.achievement}</p>
 
               </div>

@@ -1,15 +1,18 @@
 import "./About.css";
 import { motion } from "framer-motion";
 
-import principal from "../../assets/images/principal1.jpeg";
+/* IMAGES */
+import principal from "../../assets/images/staff4.jpeg";
 import bomChair from "../../assets/images/bom.jpeg";
+import pta from "../../assets/images/pta.jpeg";
+import staff1 from "../../assets/images/staff1.jpeg";
+import staff2 from "../../assets/images/staff2.jpeg";
 
 function About() {
     return (
         <section className="about" id="about">
 
-         
-       {/* HEADER */}
+            {/* HEADER */}
             <motion.div
                 className="section-header"
                 initial={{ opacity: 0, y: 50 }}
@@ -18,12 +21,10 @@ function About() {
                 transition={{ duration: 0.8 }}
             >
                 <h2>About Our School</h2>
-                <p>
-                    Nurturing Excellence, Leadership and Character Since 2011
-                </p>
+                <p>Nurturing Excellence, Leadership and Character Since 2011</p>
             </motion.div>
 
-            {/* SCHOOL STORY */}
+            {/* STORY */}
             <div className="story-section">
 
                 <motion.div
@@ -33,26 +34,19 @@ function About() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                 >
-                    <span className="section-tag">
-                        Our Journey
-                    </span>
+                    <span className="section-tag">Our Journey</span>
 
-                    <h3>
-                        A Legacy of Growth and Excellence
-                    </h3>
+                    <h3>A Legacy of Growth and Excellence</h3>
 
                     <p>
-                        Founded in 2011 by the local community intiated by Mr Benson Mukiti Mutio, Kalatine Girls
-                        Secondary School was established to provide quality
-                        education opportunities for girls in the then Kyuso
-                        Sub-County, currently Mumoni Sub-County.
+                        Founded in 2011, Kalatine Girls Secondary School
+                        has grown into a center of academic excellence,
+                        leadership development, and holistic education.
                     </p>
 
                     <p>
-                        Beginning with only 8 students and 2 teachers,
-                        the institution has grown into a respected centre
-                        of academic excellence, leadership development,
-                        and holistic education.
+                        We nurture disciplined, confident and responsible
+                        learners prepared for national and global impact.
                     </p>
                 </motion.div>
 
@@ -81,79 +75,101 @@ function About() {
                     </div>
 
                     <div className="timeline-item">
-                        <span>2023 - Apr 2024</span>
-                        <p>Mrs. Manzi Philomena</p>
-                    </div>
-
-                    <div className="timeline-item">
-                        <span>Apr 2024 - Present</span>
+                        <span>2023 - Present</span>
                         <p>Mrs. Bonface Phyllis</p>
                     </div>
                 </motion.div>
 
             </div>
 
-            {/* LEADERSHIP */}
+            {/* =========================
+               SCHOOL LEADERSHIP
+            ========================= */}
             <div className="leadership-section">
 
-                <motion.h3
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                >
-                    School Leadership
-                </motion.h3>
+                <motion.h3>School Leadership</motion.h3>
 
                 <div className="leadership-grid">
 
-                    {/* Principal */}
-                    <motion.div
-                        className="leader-card"
-                        whileHover={{ y: -10 }}
-                    >
-                        <img
-                            src={principal}
-                            alt="Principal"
-                        />
-
+                    <motion.div className="leader-card" whileHover={{ y: -10 }}>
+                        <img src={principal} alt="Principal" />
                         <div className="leader-info">
                             <span>Principal</span>
-
                             <h4>Mrs. Bonface Phyllis</h4>
-
-                            <p>
-                                Leading the institution towards academic
-                                excellence, discipline and holistic
-                                student development.
-                            </p>
+                            <p>Academic excellence and student development leadership.</p>
                         </div>
                     </motion.div>
 
-                    {/* BOM Chair */}
-                    <motion.div
-                        className="leader-card"
-                        whileHover={{ y: -10 }}
-                    >
-                        <img
-                            src={bomChair}
-                            alt="BOM Chair"
-                        />
-
+                    <motion.div className="leader-card" whileHover={{ y: -10 }}>
+                        <img src={bomChair} alt="BOM Chair" />
                         <div className="leader-info">
-                            <span>Board of Management Chairperson</span>
+                            <span>Board of Management</span>
+                            <h4>Jeffrey Kyalo Musya</h4>
+                            <p>Strategic governance and institutional oversight.</p>
+                        </div>
+                    </motion.div>
 
-                            <h4>Jeffrey Kyalo musya</h4>
+                </div>
+            </div>
 
+            {/* =========================
+               PTA SECTION
+            ========================= */}
+            <div className="leadership-section">
+
+                <motion.h3>Parents Teachers Association (PTA)</motion.h3>
+
+                <div className="leadership-grid">
+
+                    <motion.div className="leader-card" whileHover={{ y: -10 }}>
+                        <img src={pta} alt="PTA" />
+                        <div className="leader-info">
+                            <span>PTA Leadership</span>
+                            <h4>Parent–Teacher Collaboration</h4>
                             <p>
-                                Providing governance, strategic direction,
-                                and institutional oversight for sustainable
-                                growth.
+                                Strengthening communication and cooperation
+                                between parents and teachers for student success.
                             </p>
                         </div>
                     </motion.div>
 
                 </div>
+            </div>
 
+            {/* =========================
+               TEACHING STAFF ONLY
+            ========================= */}
+            <div className="leadership-section">
+
+                <motion.h3>Teaching Staff</motion.h3>
+
+                <div className="leadership-grid">
+
+                    <motion.div className="leader-card" whileHover={{ y: -10 }}>
+                        <img src={staff1} alt="Teaching Staff" />
+                        <div className="leader-info">
+                            <span>Teaching Staff</span>
+                            <h4>Academic Team</h4>
+                            <p>
+                                Qualified and dedicated teachers committed to
+                                academic excellence and mentorship.
+                            </p>
+                        </div>
+                    </motion.div>
+
+                    <motion.div className="leader-card" whileHover={{ y: -10 }}>
+                        <img src={staff2} alt="Teaching Staff" />
+                        <div className="leader-info">
+                            <span>Teaching Staff</span>
+                            <h4>Subject Specialists</h4>
+                            <p>
+                                Experts guiding learners through practical and
+                                theoretical academic excellence.
+                            </p>
+                        </div>
+                    </motion.div>
+
+                </div>
             </div>
 
             {/* STATS */}
@@ -185,20 +201,16 @@ function About() {
 
                     {[
                         "Team Work",
-                        "Continuous Improvement",
-                        "Respect",
                         "Integrity",
-                        "Efficiency",
-                        "Resilience",
-                        "Diligence"
+                        "Respect",
+                        "Excellence",
+                        "Discipline",
+                        "Resilience"
                     ].map((value, index) => (
                         <motion.div
                             key={index}
                             className="value-pill"
-                            whileHover={{
-                                scale: 1.08,
-                                y: -5
-                            }}
+                            whileHover={{ scale: 1.08, y: -5 }}
                         >
                             {value}
                         </motion.div>

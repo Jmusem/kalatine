@@ -4,6 +4,10 @@ import About from "./components/About/About";
 import Academics from "./components/Academics/Academics"; 
 import Clubs from "./components/Clubs/Clubs";
 import Department from "./components/Deparments/Departments";
+import Facilities from "./components/Facilities/Facilities";
+import Gallery from "./components/Gallery/Gallery";
+
+
 function App() {
   return (
     <>
@@ -13,6 +17,8 @@ function App() {
       <Academics />
       <Department />
       <Clubs />
+      <Facilities />
+      <Gallery />
     </>
   );
 }

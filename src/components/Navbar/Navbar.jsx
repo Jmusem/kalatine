@@ -48,8 +48,9 @@ function Navbar() {
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#academics">Academics</a></li>
-                <li><a href="#clubs">Clubs</a></li>
                 <li><a href="#departments">Departments</a></li>
+                <li><a href="#clubs">Clubs</a></li>
+                <li><a href="#facilities">Facilities</a></li>
                 <li><a href="#gallery">Gallery</a></li>
 
             </ul>
